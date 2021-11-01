@@ -4,22 +4,19 @@
 <h1>Welcome {{ name }}, here are top destinations!</h1>
     <a href='https://www.google.com'>goooogle</a>
 
-    {% for city in top_cities %}
-        <li> {{city.name}} </li>
-    {% endfor %}
-
 <form method="POST" novalidate>
     {{ form.hidden_tag() }}
 
-    <p> {{ form.city_name.label }} <br>
+    <p> {{ form.city_name.label }}
     {{ form.city_name(size=32) }}</p>
 
-    <p> {{ form.city_rank.label }} <br>
+    <p> {{ form.city_rank.label }}
     {{ form.city_rank(size=32) }}</p>
 
-    <p> {{ form.is_visited.label }} <br>
+    <p> {{ form.is_visited.label }}
     {{ form.is_visited() }}</p>
 
-    <p>{{ form.submit() }}</p>
+    <p> {{ form.submit.label }}
+    {{ form.submit() }}</p>
 </form>    
 {% endblock %}
