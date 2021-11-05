@@ -4,6 +4,12 @@
 <h1>Welcome {{ name }}, here are top destinations!</h1>
     <a href='https://www.google.com'>goooogle</a>
 
+    {% for c in top_cities%}
+        <p>
+        <span> &#8226; {{c.city}} </span>
+        </p>
+    {% endfor %}
+
 <form method="POST" novalidate>
     {{ form.hidden_tag() }}
 

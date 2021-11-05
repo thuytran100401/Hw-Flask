@@ -8,8 +8,11 @@ def home():
     name = 'Thuy Tran'
     title = 'Top Cities'
     form = TopCities()
-    top_cities = [{'city':'Paris'}]
+    top_cities = [{'city':'Paris'},\
+                  {'city':'London'},\
+                  {'city':'Rome'},\
+                  {'city': 'Tahiti'} ]
     if form.validate_on_submit():
         flash(f'{form.city_name.data} is submited!')
         return redirect('/')
-    return render_template("home.html", form=form, name=name, title=title)
+    return render_template("home.html", form=form, name=name, title=title, top_cities=top_cities)
