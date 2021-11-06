@@ -13,6 +13,6 @@ def home():
                   {'city':'Rome'},\
                   {'city': 'Tahiti'} ]
     if form.validate_on_submit():
-        flash(f'{form.city_name.data} is submited!')
+        flash('submited!')
         return redirect('/')
     return render_template("home.html", form=form, name=name, title=title, top_cities=top_cities)

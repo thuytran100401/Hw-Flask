@@ -1,5 +1,4 @@
-
-import flask
+import flask 
 
 # instance of the Flask class
 app = flask.Flask(__name__)
