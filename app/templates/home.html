@@ -1,28 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome {{ name }}, here are top destinations!</h1>
+    <h1>Welcome {{ name }}, here are top destinations!</h1>
     <a href='https://www.google.com'>goooogle</a>
+    <ul>
+        {% for c in top_cities%}
+            <li> {{c.city}} </li>
+        {% endfor %}
+    </ul>
+    <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
 
-    {% for c in top_cities%}
-        <p>
-        <span> &#8226; {{c.city}} </span>
-        </p>
-    {% endfor %}
+        <p> {{ form.city_name.label }}
+        {{ form.city_name(size=32) }}</p>
 
-<form method="POST" novalidate>
-    {{ form.hidden_tag() }}
+        <p> {{ form.city_rank.label }}
+        {{ form.city_rank(size=24) }}</p>
 
-    <p> {{ form.city_name.label }}
-    {{ form.city_name(size=32) }}</p>
+        <p> {{ form.is_visited.label }}
+        {{ form.is_visited() }}</p>
 
-    <p> {{ form.city_rank.label }}
-    {{ form.city_rank(size=32) }}</p>
-
-    <p> {{ form.is_visited.label }}
-    {{ form.is_visited() }}</p>
-
-    <p> {{ form.submit.label }}
-    {{ form.submit() }}</p>
-</form>    
+        <p> {{ form.submit.label }}
+        {{ form.submit() }}</p>
+    </form>    
 {% endblock %}
