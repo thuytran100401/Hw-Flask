@@ -32,14 +32,5 @@ class City(db.Model):
     def __repr__(self):
         return f'<City {self.city_name} : {self.city_rank}>'
 
-# class CityRank(db.Model):
-   # __tablename__ = 'city_rank'
-    #id = db.Column(db.Integer, primary_key=True)
-    #city_rank = db.Column(db.Integer, unique=False, nullable=False)
-    #city_id = db.Column(db.Integer, db.ForeignKey('city.id'))
-    # def __repr__(self):
-        # return f'<Rank {self.rank}>'
-
-
 db.create_all()
 db.session.commit()

@@ -53,9 +53,9 @@ def home():
                 return redirect('/')
             else:
                 flash(f'Rank #{form.city_rank.data} is already exist with other city!')
-                return redirect('/')
-        
+                return redirect('/')        
         else:
             flash(f'{form.city_name.data} is already exist!')  
-            return redirect('/')  
+            return redirect('/') 
+         
     return render_template("home.html", form=form, name=name, title=title, top_cities=top_cities)
