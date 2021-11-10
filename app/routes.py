@@ -3,7 +3,6 @@ from app import app
 from app.forms import TopCities
 from app import db
 from app.models import City
-from operator import itemgetter
 
 # add route '/' and add two methods to handle request
 # by the user: 'GET' and 'POST'
